@@ -14,10 +14,6 @@ export class TemplateBindingComponent {
   public srcValue = 
   'https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/privadas-antigas/foto-oficial/fotos/45774283825_8673b82f64_m.jpg/@@images/image.jpeg';
 
-  constructor() {
-    setTimeout(() => {
-      this.name = 'Bolsonaro'
-    }, 1000);
-  }
+
   public condition = this.age > 1 ? 'teste' : 'teste2'
 }
