@@ -9,11 +9,11 @@ import { Component } from '@angular/core';
 })
 export class TemplateBindingComponent {
   public name = 'Dener Troquatte';
-  public age = 32;
+  public age = 30;
   public isDisable = true;
   public srcValue = 
   'https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/privadas-antigas/foto-oficial/fotos/45774283825_8673b82f64_m.jpg/@@images/image.jpeg';
-
+  public isTextDecoration = this.age >= 32 ? 'underline' : 'none'
 
   public condition = this.age > 1 ? 'teste' : 'teste2'
 }
