@@ -9,11 +9,32 @@
 <hr />
 <h2>Attribute binding</h2>
 <p [attr.title]="name" [attr.aria-label]="name">Dener Troquatte</p>
-
 <hr />
-
 <h2>Class and Style binding</h2>
 <p [class.background-red]="age >= 32" [class.background-blue]="age === 32">{{name}}</p>
-
 <p [style.text-decoration]="isTextDecoration">{{age}}</p>
+<hr />
+
+<h2>Event binding</h2>
+<button (click)="sum()">+</button>
+<button (click)="sub()">-</button>
+<input (keydown.shift.t)="onKeyDown($event)" />
+
+
+<div style="background: palevioletred; width: 300px; height: 300px; margin-top: 10px;"
+(mousemove)="onMouseMove($event)"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
