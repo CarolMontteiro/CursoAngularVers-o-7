@@ -1,12 +1,16 @@
+<h2>Templates</h2>
 
-<h3>Tow-way binding</h3>
-<input [(ngModel)]="name" />
+<h3>Diretivas de atributos</h3>
 
-{{ name }}
+<div [ngClass]="{ 'background-red':age > 35, 'background-blue':age < 35 }">Classes condicionais</div>
 
-
-
-
+<div 
+     [ngStyle]="{ 
+     color: age > 20 ? 'green' : 'red',
+     'font-size': age > 35 ? '10px' : '20px' 
+}">
+Estilo dinâmico
+</div>
 
 
 
