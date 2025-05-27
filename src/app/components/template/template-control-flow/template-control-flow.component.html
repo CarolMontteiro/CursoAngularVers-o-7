@@ -1,21 +1,27 @@
 <h2>Control flow</h2>
 
-<h3>if</h3>
+<h3>If, For</h3>
 
 <!-- Nova Forma -->
-
-@if(isTrue) {
-    <p>Carol</p>
-    <p>André</p>
-
-}@else{
-     não têm nomes
+@if(loadingData$ | async; as data) {
+     <ul>
+          @for(item of data; track item) {
+               <li>{{ item }}</li>
+          }
+     </ul>
+}@else {
+     <p>Carregando...</p>
 }
-
+<!-- 
+@for(item of loadingData$ | async; track item) {
+     <li>{{ item }}</li>
+} -->
 <!-- Forma antiga -->
-
-<ng-container *ngIf="isTrue; else isFalse">
-     <p>Junio</p>
-     <p>Célia</p>
+<ng-container *ngIf="loadingData$ | async as data; else loading">
+    <ul>
+          <ng-container *ngFor="let item of data; trackBy: trackByFn">
+               <li>{{ item }}</li>
+          </ng-container>
+    </ul>
 </ng-container>
-<ng-template #isFalse>Não há nomes</ng-template>
+<ng-template #loading> <p>Carregando...</p> </ng-template>
