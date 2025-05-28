@@ -1,10 +1,12 @@
-<h2>Deferrable Views</h2>
 
-@defer {
+
+<h2 #trigger>Deferrable Views</h2>
+
+@defer (on interaction(trigger2); prefetch on interaction(trigger)) {
      <app-new-component />
-}@placeholder {
-     <p>Mostrar antes de carregar algo.</p>
-}@loading {
+}@placeholder() {
+     <p #trigger2>Mostrar antes de carregar algo.</p>
+}@loading() {
      <p>Loading...</p>
 }@error {
      <p>Loading failed</p>
