@@ -2,7 +2,9 @@
 
 <h2 #trigger>Deferrable Views</h2>
 
-@defer (on interaction(trigger2); prefetch on interaction(trigger)) {
+<button (click)="isTrue = true">Add true</button>
+
+@defer (when loadingData$ | async) {
      <app-new-component />
 }@placeholder() {
      <p #trigger2>Mostrar antes de carregar algo.</p>
